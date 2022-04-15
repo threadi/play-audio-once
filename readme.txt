@@ -2,7 +2,7 @@
 Contributors: threadi
 Tags: audio
 Requires at least: 5.8
-Tested up to: 5.9
+Tested up to: 5.9.3
 Requires PHP: 7.4
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -42,3 +42,6 @@ Im Frontend wird die Option, wenn aktiviert, an der Audio-Datei ausgeführt, wen
 
 = 1.0.0 =
 * Initial commit
+
+= 1.0.1 =
+* Updated dependencies
