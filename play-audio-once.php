@@ -4,7 +4,7 @@
  * Description:       Adds an option to the audio block to prevent the file from being played multiple times.
  * Requires at least: 5.8
  * Requires PHP:      7.4
- * Version:           1.0.1
+ * Version:           1.0.2
  * Author:            Thomas Zwirner
  * Author URI:		  https://www.thomaszwirner.de
  * License:           GPL-2.0-or-later
@@ -21,6 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Initialize the plugin.
  *
  * @return void
+ * @noinspection PhpUnused
  */
 function play_audio_once_init() {
     load_plugin_textdomain( 'play-audio-once', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
@@ -31,6 +32,7 @@ add_action( 'init', 'play_audio_once_init' );
  * Adds JavaScript-files to frontend.
  *
  * @return void
+ * @noinspection PhpUnused
  */
 function play_audio_once_scripts() {
     wp_register_script('play-audio-once-md5-js', plugins_url('libs/jquery.md5.js', __FILE__), ['jquery'], filemtime(plugin_dir_path(__FILE__) . 'libs/jquery.md5.js'), true);
@@ -44,6 +46,7 @@ add_action( 'wp_enqueue_scripts', 'play_audio_once_scripts' );
  * Adds JavaScript-file for Gutenberg-editor to add the option.
  *
  * @return void
+ * @noinspection PhpUnused
  */
 function play_audio_once_assets() {
     wp_enqueue_script(

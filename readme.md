@@ -2,11 +2,11 @@
 Contributors: threadi
 Tags: audio
 Requires at least: 5.8
-Tested up to: 5.9.3
+Tested up to: 6.0
 Requires PHP: 7.4
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
-Stable tag: 1.0
+Stable tag: 1.0.2
 
 ## Description
 
@@ -45,3 +45,6 @@ Im Frontend wird die Option, wenn aktiviert, an der Audio-Datei ausgeführt, wen
 
 ### 1.0.1
 * Updated dependencies
+  
+### 1.0.2
+* Updated compatibility-flag for Wordpress 6.0
