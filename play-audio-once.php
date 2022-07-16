@@ -4,7 +4,7 @@
  * Description:       Adds an option to the audio block to prevent the file from being played multiple times.
  * Requires at least: 5.8
  * Requires PHP:      7.4
- * Version:           1.0.2
+ * Version:           @@VersionNumber@@
  * Author:            Thomas Zwirner
  * Author URI:		  https://www.thomaszwirner.de
  * License:           GPL-2.0-or-later

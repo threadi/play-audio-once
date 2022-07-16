@@ -1,50 +1,64 @@
-# Play Audio Once
-Contributors: threadi
-Tags: audio
-Requires at least: 5.8
-Tested up to: 6.0
-Requires PHP: 7.4
-License: GPL-2.0-or-later
-License URI: https://www.gnu.org/licenses/gpl-2.0.html
-Stable tag: 1.0.2
+# Play audio once
 
-## Description
+This repository is the database for the plugin _Play audio once_. This plugin makes it possible to set audio files in the Gutenberg editor so that a visitor can only play them once.
 
-Adds an option to the audio block in Gutenberg-editor to prevent the file from being played multiple times.
+## Usage
 
-In the frontend, the option, if activated, is executed on the audio file if the visitor's browser has JavaScript activated. The fact that an audio file was played is saved in the browser session - not as a cookie. The storage takes place at the moment of playback, which means that it is no longer possible to rewind or fast-forward. The user is not offered an option to reset.
+After checkout go through the following steps:
 
-### Deutsch
+1. copy _build/build.properties.dist_ to _build/build.properties_.
+2. modify the build/build.properties file - note the comments in the file.
+3. execute the command in _build/_: `ant init`
+4. after that the plugin can be activated in WordPress
 
-Fügt dem Audioblock im Gutenberg-Editor eine Option hinzu, die verhindert, dass die Datei mehrfach abgespielt wird.
+## Release
 
-Im Frontend wird die Option, wenn aktiviert, an der Audio-Datei ausgeführt, wenn der Browser des Besuchers JavaScript aktiviert hat. Dass eine Audio-Datei abgespielt wurde, wird in der Browser-Sitzung gespeichert - nicht als Cookie. Die Speicherung erfolgt im Moment des Abspielens wodurch auch ein vor- und zurück-spulen nicht mehr möglich ist. Es wird dem Nutzer keine Option zum Zurücksetzen angeboten.
+1. increase the version number in _build/build.properties_.
+2. execute the following command in _build/_: `ant build`
+3. after that you will finde in the release directory a zip file which could be used in WordPress to install it.
 
----
+## Translations
 
-## Installation
+I recommend to use [PoEdit](https://poedit.net/) to translate texts for this plugin.
 
-### English
+### generate pot-file
 
-1. Upload "play-audio-once" to the "/wp-content/plugins/" directory.
-2. Activate the plugin through the "Plugins" menu in WordPress.
-3. Choose the newly added option on any audio-block in your project.
+Run in main directory:
 
-### Deutsch
+`wp i18n make-pot . languages/downloadlist.pot --exclude=src`
 
-1. Lade "play-audio-once" in das Verzeichnis "/wp-content/plugins/\" hoch.
-2. Aktivieren Sie das Plugin über das Menü "Plugins" in WordPress.
-3. Wählen Sie die neu hinzugefügte Option für einen beliebigen Audio-Block in Ihrem Projekt.
+### update translation-file
 
-## Screenshots
+1. Open .po-file of the language in PoEdit.
+2. Go to "Translate > "Update from POT-file".
+3. After this the new entries are added to the language-file.
 
-## Changelog
+### export translation-file
 
-### 1.0.0
-* Initial commit
+1. Open .po-file of the language in PoEdit.
+2. Go to File > Save.
+3. Upload the generated .mo-file and the .po-file to the plugin-folder languages/
 
-### 1.0.1
-* Updated dependencies
-  
-### 1.0.2
-* Updated compatibility-flag for Wordpress 6.0
+### generate json-translation-files
+
+Run in main directory:
+
+`wp i18n make-json languages`
+
+OR use ant in build/-directory: `ant json-translations`
+
+## Build blocks
+
+### Requirements
+
+`npm install`
+
+### Run for development
+
+`npm start`
+
+### Run for release
+
+`npm run build`
+
+Hint: will be called by ant-command mentioned above.

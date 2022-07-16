@@ -1,0 +1,8 @@
+# Plugin-Slug
+plugin.slug=play-audio-once
+
+# version number to use
+plugin.version=
+
+# set path to npm-binary
+npm.path=
