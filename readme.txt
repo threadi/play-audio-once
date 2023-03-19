@@ -2,11 +2,11 @@
 Contributors: threadi
 Tags: audio
 Requires at least: 5.8
-Tested up to: 6.1
+Tested up to: 6.2
 Requires PHP: 7.4
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 
 == Description ==
 
@@ -40,3 +40,9 @@ The source-code of this plugin is hosted on [GitHub](https://github.com/threadi/
 = 1.0.3 =
 * Updated compatibility-flag for WordPress 6.0.1
 * Added build-system in repository
+
+= 1.0.4 =
+* Fixed setting of default value for our plugin-option
+* Updated compatibility-flag for WordPress 6.2
+* Updated dependencies
+* Cleanup repository
