@@ -41,7 +41,8 @@ The source-code of this plugin is hosted on [GitHub](https://github.com/threadi/
 * Updated compatibility-flag for WordPress 6.0.1
 * Added build-system in repository
 
-= 1.0.4 =
+= 1.1.0 =
+* Added translations for german (formal), spanisch and italian
 * Fixed setting of default value for our plugin-option
 * Updated compatibility-flag for WordPress 6.2
 * Updated dependencies
