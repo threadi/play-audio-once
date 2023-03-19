@@ -24,7 +24,10 @@ const setSidebarSelectAttribute = ( settings, name ) => {
 
     return Object.assign( {}, settings, {
         attributes: Object.assign( {}, settings.attributes, {
-            playOnce: { type: 'boolean' }
+            playOnce: {
+                type: 'boolean',
+                default: false
+            }
         } ),
     } );
 };
