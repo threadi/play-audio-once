@@ -49,4 +49,6 @@ The source-code of this plugin is hosted on [GitHub](https://github.com/threadi/
 * Cleanup repository
 
 = 1.1.1 =
+* Optimized translation-handling during plugin-build
 * Updated compatibility-flag for WordPress 6.3
+* Updated dependencies
