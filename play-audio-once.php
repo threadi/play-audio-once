@@ -6,15 +6,17 @@
  * Requires PHP:      7.4
  * Version:           @@VersionNumber@@
  * Author:            Thomas Zwirner
- * Author URI:		  https://www.thomaszwirner.de
+ * Author URI:        https://www.thomaszwirner.de
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:       play-audio-once
+ *
+ * @package play-audio-once
  */
 
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
-    exit;
+	exit;
 }
 
 /**
@@ -23,8 +25,8 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @return void
  * @noinspection PhpUnused
  */
-function play_audio_once_init() {
-    load_plugin_textdomain( 'play-audio-once', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
+function play_audio_once_init(): void {
+	load_plugin_textdomain( 'play-audio-once', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
 }
 add_action( 'init', 'play_audio_once_init' );
 
@@ -34,11 +36,11 @@ add_action( 'init', 'play_audio_once_init' );
  * @return void
  * @noinspection PhpUnused
  */
-function play_audio_once_scripts() {
-    wp_register_script('play-audio-once-md5-js', plugins_url('libs/jquery.md5.js', __FILE__), ['jquery'], filemtime(plugin_dir_path(__FILE__) . 'libs/jquery.md5.js'), true);
-    wp_enqueue_script('play-audio-once-md5-js');
-    wp_register_script('play-audio-once-frontend-js', plugins_url('js.js', __FILE__), ['jquery'], filemtime(plugin_dir_path(__FILE__) . 'js.js'), true);
-    wp_enqueue_script('play-audio-once-frontend-js');
+function play_audio_once_scripts(): void {
+	wp_register_script( 'play-audio-once-md5-js', plugins_url( 'libs/jquery.md5.js', __FILE__ ), array( 'jquery' ), filemtime( plugin_dir_path( __FILE__ ) . 'libs/jquery.md5.js' ), true );
+	wp_enqueue_script( 'play-audio-once-md5-js' );
+	wp_register_script( 'play-audio-once-frontend-js', plugins_url( 'js.js', __FILE__ ), array( 'jquery' ), filemtime( plugin_dir_path( __FILE__ ) . 'js.js' ), true );
+	wp_enqueue_script( 'play-audio-once-frontend-js' );
 }
 add_action( 'wp_enqueue_scripts', 'play_audio_once_scripts' );
 
@@ -48,19 +50,20 @@ add_action( 'wp_enqueue_scripts', 'play_audio_once_scripts' );
  * @return void
  * @noinspection PhpUnused
  */
-function play_audio_once_assets() {
-    wp_enqueue_script(
-        'play-audio-once-backend-js',
-        plugins_url( 'attributes/index.js', __FILE__ ),
-        [  'wp-blocks', 'wp-element', 'wp-components', 'wp-i18n', 'wp-block-editor' ],
-        filemtime( plugin_dir_path( __FILE__ ) . 'attributes/index.js' )
-    );
-    if ( function_exists( 'wp_set_script_translations' ) ) {
-        wp_set_script_translations(
-            'play-audio-once-backend-js',
-            'play-audio-once',
-            plugin_dir_path(__FILE__) . '/languages/'
-        );
-    }
+function play_audio_once_assets(): void {
+	wp_enqueue_script(
+		'play-audio-once-backend-js',
+		plugins_url( 'attributes/index.js', __FILE__ ),
+		array( 'wp-blocks', 'wp-element', 'wp-components', 'wp-i18n', 'wp-block-editor' ),
+		filemtime( plugin_dir_path( __FILE__ ) . 'attributes/index.js' ),
+		true
+	);
+	if ( function_exists( 'wp_set_script_translations' ) ) {
+		wp_set_script_translations(
+			'play-audio-once-backend-js',
+			'play-audio-once',
+			plugin_dir_path( __FILE__ ) . '/languages/'
+		);
+	}
 }
 add_action( 'enqueue_block_assets', 'play_audio_once_assets' );
