@@ -2,11 +2,11 @@
 Contributors: threadi
 Tags: audio, play audio once
 Requires at least: 5.8
-Tested up to: 6.3
+Tested up to: 6.4
 Requires PHP: 7.4
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
-Stable tag: 1.1.1
+Stable tag: 1.1.2
 
 == Description ==
 
@@ -53,3 +53,8 @@ The source-code of this plugin is hosted on [GitHub](https://github.com/threadi/
 * Compatible with WordPress Coding Standards
 * Updated compatibility-flag for WordPress 6.3
 * Updated dependencies
+
+= 1.1.2 =
+* Updated compatibility-flag for WordPress 6.4
+* Updated dependencies
+* Compatible with WordPress Coding Standards 3.0
