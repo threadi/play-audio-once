@@ -1,24 +1,24 @@
 {
 	"name": "play-audio-once",
-	"version": "1.1.1",
+	"version": "1.1.3",
 	"description": "Adds an option to the audio block to prevent the file from being played multiple times.",
 	"author": "threadi",
 	"license": "GPL-2.0-or-later",
-	"main": "attributes/index.js",
+	"main": "attributes/audioOption.js",
 	"scripts": {
 		"format": "wp-scripts format",
 		"lint:css": "wp-scripts lint-style",
 		"lint:js": "wp-scripts lint-js",
-		"start": "wp-scripts start src/index.js --output-path=attributes/",
-		"build": "wp-scripts build src/index.js --output-path=attributes/",
+		"start": "wp-scripts start src/audioOption.js --output-path=attributes/",
+		"build": "wp-scripts build src/audioOption.js --output-path=attributes/",
 		"packages-update": "wp-scripts packages-update"
 	},
 	"devDependencies": {
-		"@wordpress/scripts": "^20.0.2",
+		"@wordpress/scripts": "^26.17.0",
 		"npm-pack-zip": "^1.3.0"
 	},
 	"dependencies": {
-		"@wordpress/i18n": "^4.3.0",
-		"classnames": "^2.3.1"
+		"@wordpress/i18n": "^4.46.0",
+		"classnames": "^2.3.2"
 	}
 }

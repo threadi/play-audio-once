@@ -5,8 +5,8 @@ msgstr ""
 "Project-Id-Version: Play Audio once 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/play-audio-"
 "once\n"
-"POT-Creation-Date: 2023-07-16T14:59:36+02:00\n"
-"PO-Revision-Date: 2023-07-16 14:59+0200\n"
+"POT-Creation-Date: 2023-11-26T12:48:18+01:00\n"
+"PO-Revision-Date: 2023-11-26 12:48+0100\n"
 "Last-Translator: Thomas Zwirner <info@thomaszwirner.de>\n"
 "Language-Team: \n"
 "Language: de\n"
@@ -37,10 +37,10 @@ msgstr "Thomas Zwirner"
 msgid "https://www.thomaszwirner.de"
 msgstr "https://www.thomaszwirner.de"
 
-#: attributes/index.js:103 attributes/index.js:91
+#: attributes/audioOption.js:279 attributes/audioOption.js:216
 msgid "Advanced Audio Controls"
 msgstr "Erweiterte Audiosteuerung"
 
-#: attributes/index.js:105 attributes/index.js:94
+#: attributes/audioOption.js:281 attributes/audioOption.js:219
 msgid "play only once per session"
 msgstr "nur einmal pro Sitzung spielen"

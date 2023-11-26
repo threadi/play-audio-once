@@ -1,9 +1,8 @@
 <?php
 /**
- * Run uninstall tasks for this Plugin, e.g.:
- * - remove options-entry
+ * Run uninstall tasks for this Plugin.
  *
- * @package auto-category-for-posts
+ * @package play-audio-once
  */
 
 // Exit if accessed directly.

@@ -20,17 +20,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Initialize the plugin.
- *
- * @return void
- * @noinspection PhpUnused
- */
-function play_audio_once_init(): void {
-	load_plugin_textdomain( 'play-audio-once', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
-}
-add_action( 'init', 'play_audio_once_init' );
-
-/**
  * Adds JavaScript-files to frontend.
  *
  * @return void
@@ -53,16 +42,16 @@ add_action( 'wp_enqueue_scripts', 'play_audio_once_scripts' );
 function play_audio_once_assets(): void {
 	wp_enqueue_script(
 		'play-audio-once-backend-js',
-		plugins_url( 'attributes/index.js', __FILE__ ),
+		plugins_url( 'attributes/audioOption.js', __FILE__ ),
 		array( 'wp-blocks', 'wp-element', 'wp-components', 'wp-i18n', 'wp-block-editor' ),
-		filemtime( plugin_dir_path( __FILE__ ) . 'attributes/index.js' ),
+		filemtime( plugin_dir_path( __FILE__ ) . 'attributes/audioOption.js' ),
 		true
 	);
 	if ( function_exists( 'wp_set_script_translations' ) ) {
 		wp_set_script_translations(
 			'play-audio-once-backend-js',
 			'play-audio-once',
-			plugin_dir_path( __FILE__ ) . '/languages/'
+			trailingslashit(plugin_dir_path( __FILE__ )) . 'languages/'
 		);
 	}
 }
