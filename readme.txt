@@ -2,11 +2,13 @@
 Contributors: threadi
 Tags: audio, play audio once
 Requires at least: 5.8
-Tested up to: 6.5
+Tested up to: 6.6
 Requires PHP: 7.4
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Stable tag: 1.1.4
+
+Adds an option to the audio block in Gutenberg-editor to prevent the file from being played multiple times.
 
 == Description ==
 
