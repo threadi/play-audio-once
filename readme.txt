@@ -2,11 +2,11 @@
 Contributors: threadi
 Tags: audio, play audio once
 Requires at least: 5.8
-Tested up to: 6.6
+Tested up to: 6.7
 Requires PHP: 7.4
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
-Stable tag: 1.1.4
+Stable tag: 1.1.5
 
 Adds an option to the audio block in Gutenberg-editor to prevent the file from being played multiple times.
 
@@ -68,4 +68,8 @@ The source-code of this plugin is hosted on [GitHub](https://github.com/threadi/
 
 = 1.1.4 =
 * Updated compatibility-flag for WordPress 6.5
+* Updated dependencies (security fixes in them)
+
+= 1.1.5 =
+* Updated compatibility-flag for WordPress 6.7
 * Updated dependencies (security fixes in them)
