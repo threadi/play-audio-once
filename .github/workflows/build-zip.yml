@@ -44,6 +44,8 @@ jobs:
         run: |
           rm -fr assets
           rm -fr build
+          rm -fr languages
+          rm -fr src
           rm changelog.md
           rm package.json
           rm package-lock.json
