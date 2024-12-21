@@ -1,0 +1,61 @@
+name: Build release zip
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  build:
+    name: Build release zip
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Run package installs and builds
+        run: |
+          composer install
+          composer update
+          npm i
+          npm run build
+
+      - name: Run WordPress Coding Standard fixes
+        run: vendor/bin/phpcbf --extensions=php --ignore=*/vendor/*,*/attributes/*,*/node_modules/*,*/svn/*,*/releases/* --standard=ruleset.xml .
+
+      - name: Run WordPress Coding Standard checks
+        run: vendor/bin/phpcs --extensions=php --ignore=*/vendor/*,*/attributes/*,*/node_modules/*,*/svn/*,*/releases/* --standard=ruleset.xml .
+
+      - name: Set version number
+        uses: richardrigutins/replace-in-files@v2
+        with:
+            files: 'play-audio-once.php'
+            search-text: '@@VersionNumber@@'
+            replacement-text: ${{ github.ref_name }}
+
+      - name: Set version number 2
+        uses: richardrigutins/replace-in-files@v2
+        with:
+          files: 'readme.txt'
+          search-text: '@@VersionNumber@@'
+          replacement-text: ${{ github.ref_name }}
+
+      - name: ZIP plugin
+        run: |
+          rm -fr assets
+          rm -fr build
+          rm changelog.md
+          rm package.json
+          rm package-lock.json
+          rm ruleset.xml
+          cd ..
+          zip -r -q ${{ github.event.repository.name }}_${{ github.ref_name }}.zip ${{ github.event.repository.name }}/* -x "*/.git/*" "*/.github/*" "*/phpcs.xml" "*/composer.json" "*/composer.lock" "*/readme.md" "*/.gitignore" "*/vendor/*" "*/node_modules/*" "*/svn/*" "*/releases/*"
+          cp ${{ github.event.repository.name }}_${{ github.ref_name }}.zip ${{ github.event.repository.name }}/
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        if: startsWith(github.ref, 'refs/tags/')
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          files: ${{ github.event.repository.name }}_${{ github.ref_name }}.zip
