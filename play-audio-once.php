@@ -51,7 +51,7 @@ function play_audio_once_assets(): void {
 		wp_set_script_translations(
 			'play-audio-once-backend-js',
 			'play-audio-once',
-			trailingslashit(plugin_dir_path( __FILE__ )) . 'languages/'
+			trailingslashit( plugin_dir_path( __FILE__ ) ) . 'languages/'
 		);
 	}
 }

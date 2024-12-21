@@ -6,7 +6,7 @@ Tested up to: 6.7
 Requires PHP: 7.4
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
-Stable tag: 1.1.5
+Stable tag: @@VersionNumber@@
 
 Adds an option to the audio block in Gutenberg-editor to prevent the file from being played multiple times.
 
@@ -30,46 +30,8 @@ The source-code of this plugin is hosted on [GitHub](https://github.com/threadi/
 
 == Changelog ==
 
-= 1.0.0 =
-* Initial commit
+= 1.1.6 =
+* Added GitHub action for releases
+* Moved changelog to GitHub
 
-= 1.0.1 =
-* Updated dependencies
-
-= 1.0.2 =
-* Updated compatibility-flag for WordPress 6.0
-
-= 1.0.3 =
-* Updated compatibility-flag for WordPress 6.0.1
-* Added build-system in repository
-
-= 1.1.0 =
-* Added translations for german (formal), spanisch and italian
-* Fixed setting of default value for our plugin-option
-* Updated compatibility-flag for WordPress 6.2
-* Updated dependencies
-* Cleanup repository
-
-= 1.1.1 =
-* Optimized translation-handling during plugin-build
-* Compatible with WordPress Coding Standards
-* Updated compatibility-flag for WordPress 6.3
-* Updated dependencies
-
-= 1.1.2 =
-* Updated compatibility-flag for WordPress 6.4
-* Updated dependencies
-* Compatible with WordPress Coding Standards 3.0
-
-= 1.1.3 =
-* Removed language files from release
-* Cleaned js-files
-* Updated dependencies (security fixes in them)
-
-= 1.1.4 =
-* Updated compatibility-flag for WordPress 6.5
-* Updated dependencies (security fixes in them)
-
-= 1.1.5 =
-* Updated compatibility-flag for WordPress 6.7
-* Updated dependencies (security fixes in them)
+[older changes](https://github.com/threadi/image-upload-for-imgur/blob/master/changelog.md)
