@@ -33,5 +33,6 @@ The source-code of this plugin is hosted on [GitHub](https://github.com/threadi/
 = 1.1.6 =
 * Added GitHub action for releases
 * Moved changelog to GitHub
+* Updated dependencies
 
 [older changes](https://github.com/threadi/image-upload-for-imgur/blob/master/changelog.md)

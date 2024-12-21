@@ -9,6 +9,7 @@
 ### Changed
 
 - Moved changelog to GitHub
+- Updated dependencies
 
 ## [1.1.5] - 06.11.2024
 
