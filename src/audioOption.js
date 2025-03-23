@@ -91,7 +91,7 @@ const addOptionInSidebar = createHigherOrderComponent( ( BlockEdit ) => {
                         title={ __( 'Advanced Audio Controls', 'play-audio-once' ) }
                     >
                         <CheckboxControl
-                            label={__('play only once per session', 'play-audio-once')}
+                            label={__('Play only once per session', 'play-audio-once')}
                             checked={ playOnce }
                             onChange={ ( value ) => {
                                 setAttributes( {

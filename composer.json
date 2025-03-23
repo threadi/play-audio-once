@@ -1,9 +1,6 @@
 {
     "name": "threadi/play-audio-once",
-    "version": "1.1.5",
-    "require-dev": {
-        "wp-coding-standards/wpcs": "^3.0.0"
-    },
+    "version": "2.0.0",
     "scripts": {
         "post-install-cmd": [
             "\"vendor/bin/phpcs\" --config-set installed_paths vendor/wp-coding-standards/wpcs,vendor/phpcsstandards/phpcsutils,vendor/phpcsstandards/phpcsextra"
@@ -15,6 +12,23 @@
     "config": {
         "allow-plugins": {
             "dealerdirect/phpcodesniffer-composer-installer": true
+        },
+        "optimize-autoloader": true,
+        "classmap-authoritative": true,
+        "apcu-autoloader": true,
+        "prepend-autoloader": false,
+        "platform-check": false
+    },
+    "autoload": {
+        "psr-4": {
+            "PlayAudioOnce\\": "app/"
         }
+    },
+    "require": {
+        "php": "^8.0"
+    },
+    "require-dev": {
+        "wp-coding-standards/wpcs": "^3.1.0",
+        "automattic/vipwpcs": "^3.0"
     }
 }
