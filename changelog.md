@@ -1,5 +1,20 @@
 # Changelog
 
+## [Unreleased]
+
+### Added
+
+- Added third party support possibility
+- Added support for audio widget in plugin "Responsive Addons for Elementor"
+
+### Changed
+
+- Optimized JS-handles for own scripts
+- Set minimum requirement for PHP 8.0
+- Updated compatibility-flag for WordPress 6.8
+- Updated dependencies
+- Updated local build scripts for new releases
+
 ## [1.1.6] - 21.12.2024
 
 ### Added
@@ -31,6 +46,7 @@
 
 - Cleaned js-files
 - Updated dependencies (security fixes in them)
+
 ## [1.1.2] - 21.10.2023
 
 ### Changed
