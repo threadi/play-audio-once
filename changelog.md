@@ -5,8 +5,12 @@
 ### Added
 
 - Added third party support possibility
+- Added support for audio widget in plugin "CP Media Player" in Elementor
 - Added support for audio widget in plugin "Music player for Elementor"
 - Added support for audio widget in plugin "Responsive Addons for Elementor"
+- Added help links in plugin list on our plugin
+- Added how to use documentation
+- Added some hooks
 
 ### Changed
 
