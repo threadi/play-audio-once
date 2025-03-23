@@ -5,12 +5,13 @@
 ### Added
 
 - Added third party support possibility
+- Added support for audio widget in plugin "Music player for Elementor"
 - Added support for audio widget in plugin "Responsive Addons for Elementor"
 
 ### Changed
 
 - Optimized JS-handles for own scripts
-- Set minimum requirement for PHP 8.0
+- Set minimum requirement to PHP 8.0
 - Updated compatibility-flag for WordPress 6.8
 - Updated dependencies
 - Updated local build scripts for new releases
