@@ -5,6 +5,7 @@
 ### Added
 
 - Added third party support possibility
+- Added support for audio widget in plugin "CP Media Player" in Elementor
 - Added support for audio widget in plugin "Music player for Elementor"
 - Added support for audio widget in plugin "Responsive Addons for Elementor"
 
