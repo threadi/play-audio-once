@@ -76,3 +76,15 @@ Hint: will be called by ant-command mentioned above.
 ### Repair
 
 `vendor/bin/phpcbf --extensions=php --ignore=*/vendor/*,*/attributes/*,*/node_modules/*,*/svn/*,*/releases/* --standard=ruleset.xml .`
+
+## Generate documentation
+
+`vendor/bin/wp-documentor parse app --format=markdown --output=docs/hooks.md --prefix=play_audio_once_`
+
+## Check for WordPress VIP Coding Standards
+
+Hint: this check runs against the VIP-GO-platform which is not our target for this plugin. Many warnings can be ignored.
+
+### Run
+
+`vendor/bin/phpcs --extensions=php --ignore=*/vendor/*,*/attributes/*,*/node_modules/*,*/svn/*,*/releases/* --standard=WordPress-VIP-Go .`

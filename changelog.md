@@ -1,5 +1,15 @@
 # Changelog
 
+## [Unreleased]
+
+### Added
+
+- Added hook documentation
+
+### Optimized
+
+- Optimized some code spellings
+
 ## [2.0.0]
 
 ### Added

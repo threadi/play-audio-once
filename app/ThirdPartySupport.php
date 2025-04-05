@@ -80,7 +80,7 @@ class ThirdPartySupport {
 	 */
 	private function get_third_party_service(): array {
 		$list = array(
-            '\PlayAudioOnce\ThirdPartySupport\Cp_Media_Player',
+			'\PlayAudioOnce\ThirdPartySupport\Cp_Media_Player',
 			'\PlayAudioOnce\ThirdPartySupport\Music_Player_For_Elementor',
 			'\PlayAudioOnce\ThirdPartySupport\Responsive_Addons_for_Elementor',
 		);
