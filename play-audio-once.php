@@ -85,18 +85,18 @@ add_action( 'enqueue_block_assets', 'play_audio_once_assets' );
  * @return array
  */
 function play_audio_once_add_row_meta_links( array $links, string $file ): array {
-    // bail if this is not our plugin.
-    if ( __FILE__ !== WP_PLUGIN_DIR . DIRECTORY_SEPARATOR . $file ) {
-        return $links;
-    }
+	// bail if this is not our plugin.
+	if ( __FILE__ !== WP_PLUGIN_DIR . DIRECTORY_SEPARATOR . $file ) {
+		return $links;
+	}
 
-    // add our custom links.
-    $row_meta = array(
-        'support' => '<a href="https://wordpress.org/support/plugin/play-audio-once/" target="_blank" title="' . esc_html__( 'Support Forum', 'play-audio-once' ) . '">' . esc_html__( 'Support Forum', 'play-audio-once' ) . '</a>',
-    );
+	// add our custom links.
+	$row_meta = array(
+		'support' => '<a href="https://wordpress.org/support/plugin/play-audio-once/" target="_blank" title="' . esc_attr__( 'Support Forum', 'play-audio-once' ) . '">' . esc_html__( 'Support Forum', 'play-audio-once' ) . '</a>',
+	);
 
-    // return the resulting list of links.
-    return array_merge( $links, $row_meta );
+	// return the resulting list of links.
+	return array_merge( $links, $row_meta );
 }
 add_filter( 'plugin_row_meta', 'play_audio_once_add_row_meta_links', 10, 2 );
 
@@ -108,16 +108,16 @@ add_filter( 'plugin_row_meta', 'play_audio_once_add_row_meta_links', 10, 2 );
  * @return array
  */
 function play_audio_once_add_setting_link( array $links ): array {
-    // get language-dependent URL for the how-to.
-    $url = 'https://github.com/threadi/play-audio-once/blob/master/docs/how_to_use.md';
-    if( str_starts_with( get_locale(), 'de_' ) ) {
-        $url = 'https://github.com/threadi/play-audio-once/blob/master/docs/how_to_use_de.md';
-    }
+	// get language-dependent URL for the how-to.
+	$url = 'https://github.com/threadi/play-audio-once/blob/master/docs/how_to_use.md';
+	if ( str_starts_with( get_locale(), 'de_' ) ) {
+		$url = 'https://github.com/threadi/play-audio-once/blob/master/docs/how_to_use_de.md';
+	}
 
-    // add the link to the list.
-    $links[] = '<a href="' . esc_url( $url ) . '" target="_blank">' . esc_html__( 'How to use', 'play-audio-once' ) . '</a>';
+	// add the link to the list.
+	$links[] = '<a href="' . esc_url( $url ) . '" target="_blank">' . esc_html__( 'How to use', 'play-audio-once' ) . '</a>';
 
-    // return resulting list of links.
-    return $links;
+	// return resulting list of links.
+	return $links;
 }
 add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), 'play_audio_once_add_setting_link' );
