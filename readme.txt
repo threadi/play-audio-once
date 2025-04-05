@@ -31,8 +31,17 @@ The source-code of this plugin is hosted on [GitHub](https://github.com/threadi/
 == Changelog ==
 
 = @@VersionNumber@@ =
-* Added GitHub action for releases
-* Moved changelog to GitHub
-* Updated dependencies
+- Added third party support possibility
+- Added support for audio widget in plugin "CP Media Player" in Elementor
+- Added support for audio widget in plugin "Music player for Elementor"
+- Added support for audio widget in plugin "Responsive Addons for Elementor"
+- Added help links in plugin list on our plugin
+- Added how to use documentation
+- Added some hooks
+- Optimized JS-handles for own scripts
+- Set minimum requirement to PHP 8.0
+- Updated compatibility-flag for WordPress 6.8
+- Updated dependencies
+- Updated local build scripts for new releases
 
 [older changes](https://github.com/threadi/image-upload-for-imgur/blob/master/changelog.md)

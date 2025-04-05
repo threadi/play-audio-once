@@ -66,6 +66,8 @@
 			<zipfileset dir="${src.dir}/app" prefix="${plugin.slug}/app" />
 			<zipfileset dir="${src.dir}/attributes" prefix="${plugin.slug}/attributes" />
 			<zipfileset dir="${src.dir}/libs" prefix="${plugin.slug}/libs" />
+			<zipfileset dir="${src.dir}/vendor" includes="autoload.php" fullpath="${plugin.slug}/vendor/autoload.php" />
+			<zipfileset dir="${src.dir}/vendor/composer" prefix="${plugin.slug}/vendor/composer" />
 			<zipfileset dir="${src.dir}" includes="readme-release.txt" fullpath="${plugin.slug}/readme.txt" />
 			<zipfileset dir="${src.dir}" includes="uninstall.php,composer.json,js.js" prefix="${plugin.slug}" />
 			<zipfileset dir="${src.dir}" includes="${plugin.slug}-release.php" fullpath="${plugin.slug}/${plugin.slug}.php" />

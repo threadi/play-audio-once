@@ -110,6 +110,9 @@ add_filter( 'plugin_row_meta', 'play_audio_once_add_row_meta_links', 10, 2 );
 function play_audio_once_add_setting_link( array $links ): array {
     // get language-dependent URL for the how-to.
     $url = 'https://github.com/threadi/play-audio-once/blob/master/docs/how_to_use.md';
+    if( str_starts_with( get_locale(), 'de_' ) ) {
+        $url = 'https://github.com/threadi/play-audio-once/blob/master/docs/how_to_use_de.md';
+    }
 
     // add the link to the list.
     $links[] = '<a href="' . esc_url( $url ) . '" target="_blank">' . esc_html__( 'How to use', 'play-audio-once' ) . '</a>';
