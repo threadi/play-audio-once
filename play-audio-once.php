@@ -38,8 +38,8 @@ require_once __DIR__ . '/vendor/autoload.php';
  * @return void
  */
 function play_audio_once_init(): void {
-    // initialize the settings.
-    Settings::get_instance()->add_settings();
+	// initialize the settings.
+	Settings::get_instance()->add_settings();
 
 	// initialize the third party support.
 	\PlayAudioOnce\ThirdPartySupport::get_instance()->init();
@@ -137,15 +137,15 @@ add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), 'play_audio_on
  * @return array
  */
 function play_audio_once_add_body_classes( array $css_classes ): array {
-    // bail if setting is not enabled.
-    if( 1 !== absint( get_option( 'play_audio_once_whole_site' ) ) ) {
-        return $css_classes;
-    }
+	// bail if setting is not enabled.
+	if ( 1 !== absint( get_option( 'play_audio_once_whole_site' ) ) ) {
+		return $css_classes;
+	}
 
-    // add our class to the list.
-    $css_classes[] = 'audio-play-once-true';
+	// add our class to the list.
+	$css_classes[] = 'audio-play-once-true';
 
-    // return the resulting list.
-    return $css_classes;
+	// return the resulting list.
+	return $css_classes;
 }
 add_filter( 'body_class', 'play_audio_once_add_body_classes' );
