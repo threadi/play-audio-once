@@ -1,3 +1,5 @@
 build/build.properties
 *.zip
 languages/*.json
+app/Dependencies/**/*
+!app/Dependencies/.gitkeep

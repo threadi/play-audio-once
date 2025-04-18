@@ -4,10 +4,12 @@
 
 ### Added
 
+- Added setting for enable play audio once on frontend for all audio files
 - Added hook documentation
 
 ### Optimized
 
+- Optimized class loader
 - Optimized some code spellings
 
 ## [2.0.0]

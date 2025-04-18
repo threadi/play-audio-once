@@ -2,7 +2,7 @@
  * Check some things on load.
  */
 jQuery(document).ready(function($) {
-    $('.audio-play-once-true > audio, .audio-play-once-true .mejs-mediaelement audio, .audio-play-once-true .compact-player-entry audio').each(function () {
+    $('body.audio-play-once-true audio, .audio-play-once-true > audio, .audio-play-once-true .mejs-mediaelement audio, .audio-play-once-true .compact-player-entry audio').each(function () {
         // get md5 of the audio-filename
         let fileMd5 = $.md5($(this).attr('src'));
 
