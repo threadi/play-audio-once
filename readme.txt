@@ -44,4 +44,4 @@ The source-code of this plugin is hosted on [GitHub](https://github.com/threadi/
 - Optimized class loader
 - Optimized some code spellings
 
-[older changes](https://github.com/threadi/image-upload-for-imgur/blob/master/changelog.md)
+[older changes](https://github.com/threadi/play-audio-once/blob/master/changelog.md)
