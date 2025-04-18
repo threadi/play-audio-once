@@ -71,11 +71,11 @@ Hint: will be called by ant-command mentioned above.
 
 ### Run
 
-`vendor/bin/phpcs --extensions=php --ignore=*/vendor/*,*/attributes/*,*/node_modules/*,*/svn/*,*/releases/* --standard=ruleset.xml .`
+`vendor/bin/phpcs --extensions=php --ignore=*/vendor/*,*/attributes/*,*/node_modules/*,*/svn/*,*/releases/*,*/app/Dependencies/* --standard=ruleset.xml .`
 
 ### Repair
 
-`vendor/bin/phpcbf --extensions=php --ignore=*/vendor/*,*/attributes/*,*/node_modules/*,*/svn/*,*/releases/* --standard=ruleset.xml .`
+`vendor/bin/phpcbf --extensions=php --ignore=*/vendor/*,*/attributes/*,*/node_modules/*,*/svn/*,*/releases/*,*/app/Dependencies/* --standard=ruleset.xml .`
 
 ## Generate documentation
 
@@ -87,4 +87,4 @@ Hint: this check runs against the VIP-GO-platform which is not our target for th
 
 ### Run
 
-`vendor/bin/phpcs --extensions=php --ignore=*/vendor/*,*/attributes/*,*/node_modules/*,*/svn/*,*/releases/* --standard=WordPress-VIP-Go .`
+`vendor/bin/phpcs --extensions=php --ignore=*/vendor/*,*/attributes/*,*/node_modules/*,*/svn/*,*/releases/*,*/app/Dependencies/* --standard=WordPress-VIP-Go .`
