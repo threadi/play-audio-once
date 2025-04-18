@@ -19,6 +19,13 @@ jobs:
           composer update
           npm i
           npm run build
+          cd vendor/threadi/easy-dialog-for-wordpress/
+          npm i
+          npm run build
+          cd ../../../
+
+      - name: Generate autoloader
+        run: composer dump-autoload -oa --no-dev
 
       - name: Run WordPress Coding Standard fixes
         run: vendor/bin/phpcbf --extensions=php --ignore=*/vendor/*,*/attributes/*,*/node_modules/*,*/svn/*,*/releases/* --standard=ruleset.xml .
@@ -52,6 +59,8 @@ jobs:
           rm ruleset.xml
           cd ..
           zip -r -q ${{ github.event.repository.name }}_${{ github.ref_name }}.zip ${{ github.event.repository.name }}/* -x "*/.git/*" "*/.github/*" "*/phpcs.xml" "*/composer.json" "*/composer.lock" "*/readme.md" "*/.gitignore" "*/vendor/*" "*/node_modules/*" "*/svn/*" "*/releases/*"
+          zip -ur ${{ github.event.repository.name }}_${{ github.ref_name }}.zip ${{ github.event.repository.name }}/vendor/threadi/*/build/*
+          zip -ur ${{ github.event.repository.name }}_${{ github.ref_name }}.zip ${{ github.event.repository.name }}/vendor/threadi/*/lib/*
           cp ${{ github.event.repository.name }}_${{ github.ref_name }}.zip ${{ github.event.repository.name }}/
 
       - name: Create Release

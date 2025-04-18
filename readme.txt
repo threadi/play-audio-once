@@ -8,13 +8,21 @@ License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Stable tag: @@VersionNumber@@
 
-Adds an option to the audio block in Gutenberg-editor to prevent the file from being played multiple times.
+Adds the option to prevent an audio file from being played multiple times.
 
 == Description ==
 
-Adds an option to the audio block in Gutenberg-editor to prevent the file from being played multiple times.
+Adds the option to prevent an audio file from being played multiple times. You can set the option for the complete website
+or restrict the audio files only for specific files added from you in your editor.
 
 In the frontend, the option, if activated, is executed on the audio file if the visitor's browser has JavaScript activated. The fact that an audio file was played is saved in the browser session - not as a cookie. The storage takes place at the moment of playback, which means that it is no longer possible to rewind or fast-forward. The user is not offered an option to reset.
+
+== Supported editors ==
+
+The plugin actually supports following editors:
+
+* Block Editor
+* Multiple plugins which adds audio widget in Elementor
 
 == Installation ==
 
@@ -31,17 +39,9 @@ The source-code of this plugin is hosted on [GitHub](https://github.com/threadi/
 == Changelog ==
 
 = @@VersionNumber@@ =
-- Added third party support possibility
-- Added support for audio widget in plugin "CP Media Player" in Elementor
-- Added support for audio widget in plugin "Music player for Elementor"
-- Added support for audio widget in plugin "Responsive Addons for Elementor"
-- Added help links in plugin list on our plugin
-- Added how to use documentation
-- Added some hooks
-- Optimized JS-handles for own scripts
-- Set minimum requirement to PHP 8.0
-- Updated compatibility-flag for WordPress 6.8
-- Updated dependencies
-- Updated local build scripts for new releases
+- Added setting for enable play audio once on frontend for all audio files
+- Added hook documentation
+- Optimized class loader
+- Optimized some code spellings
 
 [older changes](https://github.com/threadi/image-upload-for-imgur/blob/master/changelog.md)
