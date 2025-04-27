@@ -15,16 +15,17 @@
  */
 
 // Exit if accessed directly.
-use PlayAudioOnce\Settings;
-
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
 // do nothing if PHP-version is not 8.0 or newer.
-if ( version_compare( PHP_VERSION, '8.0', '<' ) ) {
+if ( PHP_VERSION_ID < 80000 ) {
 	return;
 }
+
+use PlayAudioOnce\Settings;
+use PlayAudioOnce\ThirdPartySupport;
 
 // save the plugin path.
 const PLAO_PLUGIN = __FILE__;
@@ -42,7 +43,7 @@ function play_audio_once_init(): void {
 	Settings::get_instance()->add_settings();
 
 	// initialize the third party support.
-	\PlayAudioOnce\ThirdPartySupport::get_instance()->init();
+	ThirdPartySupport::get_instance()->init();
 }
 add_action( 'init', 'play_audio_once_init' );
 
@@ -116,6 +117,9 @@ add_filter( 'plugin_row_meta', 'play_audio_once_add_row_meta_links', 10, 2 );
  * @return array
  */
 function play_audio_once_add_setting_link( array $links ): array {
+    // add the link to the list.
+    $links[] = '<a href="' . esc_url( \PlayAudioOnce\Dependencies\easySettingsForWordPress\Settings::get_instance()->get_settings_link() ) . '">' . esc_html__( 'Settings', 'play-audio-once' ) . '</a>';
+
 	// get language-dependent URL for the how-to.
 	$url = 'https://github.com/threadi/play-audio-once/blob/master/docs/how_to_use.md';
 	if ( str_starts_with( get_locale(), 'de_' ) ) {

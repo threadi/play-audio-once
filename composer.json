@@ -30,8 +30,7 @@
             "classmap_directory": "/libs/classes/dependencies/",
             "classmap_prefix": "PlayAudioOnce",
             "packages": [
-                "threadi/easy-settings-for-wordpress",
-                "threadi/easy-dialog-for-wordpress"
+                "threadi/easy-settings-for-wordpress"
             ]
         }
     },

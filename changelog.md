@@ -5,6 +5,7 @@
 ### Added
 
 - Added setting for enable play audio once on frontend for all audio files
+- Added setting link in plugin list
 - Added hook documentation
 
 ### Optimized
