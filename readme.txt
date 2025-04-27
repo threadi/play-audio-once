@@ -40,6 +40,7 @@ The source-code of this plugin is hosted on [GitHub](https://github.com/threadi/
 
 = @@VersionNumber@@ =
 - Added setting for enable play audio once on frontend for all audio files
+- Added setting link in plugin list
 - Added hook documentation
 - Optimized class loader
 - Optimized some code spellings
