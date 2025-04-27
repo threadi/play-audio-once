@@ -24,15 +24,18 @@ jobs:
           npm run build
           cd ../../../
 
+      - name: Run PHPStan check
+        run: vendor/bin/phpstan analyse
+
       - name: Generate autoloader
         run: composer dump-autoload -oa --no-dev
 
       - name: Run WordPress Coding Standard fixes
-        run: vendor/bin/phpcbf --extensions=php --ignore=*/vendor/*,*/attributes/*,*/node_modules/*,*/svn/*,*/releases/*,*/app/Dependencies/* --standard=ruleset.xml .
+        run: vendor/bin/phpcbf --standard=ruleset.xml .
         continue-on-error: true
 
       - name: Run WordPress Coding Standard checks
-        run: vendor/bin/phpcs --extensions=php --ignore=*/vendor/*,*/attributes/*,*/node_modules/*,*/svn/*,*/releases/*,*/app/Dependencies/* --standard=ruleset.xml .
+        run: vendor/bin/phpcs --standard=ruleset.xml .
 
       - name: Set version number
         uses: richardrigutins/replace-in-files@v2

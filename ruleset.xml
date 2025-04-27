@@ -3,6 +3,22 @@
 
 	<description>Play Audio Once Coding Standards</description>
 
+    <!--
+       Only scan files with .php extension.
+   -->
+    <arg name="extensions" value="php" />
+
+    <!--
+        Directories to exclude.
+    -->
+    <exclude-pattern>*/vendor/*</exclude-pattern>
+    <exclude-pattern>*/attributes/*</exclude-pattern>
+    <exclude-pattern>*/node_modules/*</exclude-pattern>
+    <exclude-pattern>*/svn/*</exclude-pattern>
+    <exclude-pattern>*/releases/*</exclude-pattern>
+    <exclude-pattern>*/app/Dependencies/*</exclude-pattern>
+
+    <!-- Use additional rulesets -->
 	<rule ref="WordPress-Docs"/>
 	<rule ref="WordPress-Extra"/>
     <rule ref="WordPress">
