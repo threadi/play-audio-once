@@ -37,10 +37,11 @@ class Settings {
 	 * Return the instance of this Singleton object.
 	 */
 	public static function get_instance(): Settings {
-		if ( ! static::$instance instanceof static ) {
-			static::$instance = new static();
+		if ( is_null( self::$instance ) ) {
+			self::$instance = new self();
 		}
-		return static::$instance;
+
+		return self::$instance;
 	}
 
 	/**
@@ -57,7 +58,7 @@ class Settings {
 		$settings_obj->set_plugin_slug( 'play-audio-once' );
 		$settings_obj->set_menu_title( __( 'Play Audio Once settings', 'play-audio-once' ) );
 		$settings_obj->set_title( __( 'Settings for Play Audio Once', 'play-audio-once' ) );
-		$settings_obj->set_menu_slug( 'options.php' );
+		$settings_obj->set_menu_slug( 'play-audio-once' );
 		$settings_obj->set_url( Helper::get_plugin_url() . 'app/Dependencies/easySettingsForWordPress/' );
 
 		/**

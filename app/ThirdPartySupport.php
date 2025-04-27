@@ -37,10 +37,11 @@ class ThirdPartySupport {
 	 * Return the instance of this Singleton object.
 	 */
 	public static function get_instance(): ThirdPartySupport {
-		if ( ! static::$instance instanceof static ) {
-			static::$instance = new static();
+		if ( is_null( self::$instance ) ) {
+			self::$instance = new self();
 		}
-		return static::$instance;
+
+		return self::$instance;
 	}
 
 	/**
@@ -50,18 +51,21 @@ class ThirdPartySupport {
 	 */
 	public function init(): void {
 		foreach ( $this->get_third_party_service() as $third_party_service ) {
-			// bail if it is not a string.
-			if ( ! is_string( $third_party_service ) ) {
-				continue;
-			}
-
 			// bail if class does not exist.
 			if ( ! class_exists( $third_party_service ) ) {
 				continue;
 			}
 
+			// extend the class name to match callable.
+			$class_name = $third_party_service . '::get_instance';
+
+			// bail if it is not callable.
+			if ( ! is_callable( $class_name ) ) {
+				continue;
+			}
+
 			// get object.
-			$obj = call_user_func( $third_party_service . '::get_instance' );
+			$obj = $class_name();
 
 			// bail if object is not of type ThirdPartySupport_Base.
 			if ( ! $obj instanceof ThirdPartySupport_Base ) {
@@ -76,7 +80,7 @@ class ThirdPartySupport {
 	/**
 	 * Return list of supported third party service methods.
 	 *
-	 * @return array
+	 * @return array<string>
 	 */
 	private function get_third_party_service(): array {
 		$list = array(

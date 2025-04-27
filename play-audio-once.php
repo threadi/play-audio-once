@@ -15,16 +15,17 @@
  */
 
 // Exit if accessed directly.
-use PlayAudioOnce\Settings;
-
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
 // do nothing if PHP-version is not 8.0 or newer.
-if ( version_compare( PHP_VERSION, '8.0', '<' ) ) {
+if ( PHP_VERSION_ID < 80000 ) { // @phpstan-ignore smaller.alwaysFalse
 	return;
 }
+
+use PlayAudioOnce\Settings;
+use PlayAudioOnce\ThirdPartySupport;
 
 // save the plugin path.
 const PLAO_PLUGIN = __FILE__;
@@ -42,7 +43,7 @@ function play_audio_once_init(): void {
 	Settings::get_instance()->add_settings();
 
 	// initialize the third party support.
-	\PlayAudioOnce\ThirdPartySupport::get_instance()->init();
+	ThirdPartySupport::get_instance()->init();
 }
 add_action( 'init', 'play_audio_once_init' );
 
@@ -53,9 +54,9 @@ add_action( 'init', 'play_audio_once_init' );
  * @noinspection PhpUnused
  */
 function play_audio_once_scripts(): void {
-	wp_register_script( 'play-audio-once-md5', plugins_url( 'libs/jquery.md5.js', __FILE__ ), array( 'jquery' ), filemtime( plugin_dir_path( __FILE__ ) . 'libs/jquery.md5.js' ), true );
+	wp_register_script( 'play-audio-once-md5', plugins_url( 'libs/jquery.md5.js', __FILE__ ), array( 'jquery' ), (string) filemtime( plugin_dir_path( __FILE__ ) . 'libs/jquery.md5.js' ), true );
 	wp_enqueue_script( 'play-audio-once-md5' );
-	wp_register_script( 'play-audio-once-frontend', plugins_url( 'js.js', __FILE__ ), array( 'jquery' ), filemtime( plugin_dir_path( __FILE__ ) . 'js.js' ), true );
+	wp_register_script( 'play-audio-once-frontend', plugins_url( 'js.js', __FILE__ ), array( 'jquery' ), (string) filemtime( plugin_dir_path( __FILE__ ) . 'js.js' ), true );
 	wp_enqueue_script( 'play-audio-once-frontend' );
 }
 add_action( 'wp_enqueue_scripts', 'play_audio_once_scripts' );
@@ -71,7 +72,7 @@ function play_audio_once_assets(): void {
 		'play-audio-once-backend-js',
 		plugins_url( 'attributes/audioOption.js', __FILE__ ),
 		array( 'wp-blocks', 'wp-element', 'wp-components', 'wp-i18n', 'wp-block-editor' ),
-		filemtime( plugin_dir_path( __FILE__ ) . 'attributes/audioOption.js' ),
+		(string) filemtime( plugin_dir_path( __FILE__ ) . 'attributes/audioOption.js' ),
 		true
 	);
 	if ( function_exists( 'wp_set_script_translations' ) ) {
@@ -87,10 +88,10 @@ add_action( 'enqueue_block_assets', 'play_audio_once_assets' );
 /**
  * Add links in row meta.
  *
- * @param array  $links List of links.
- * @param string $file The requested plugin file name.
+ * @param array<string> $links List of links.
+ * @param string        $file The requested plugin file name.
  *
- * @return array
+ * @return array<string>
  */
 function play_audio_once_add_row_meta_links( array $links, string $file ): array {
 	// bail if this is not our plugin.
@@ -111,11 +112,14 @@ add_filter( 'plugin_row_meta', 'play_audio_once_add_row_meta_links', 10, 2 );
 /**
  * Add links in plugin list.
  *
- * @param array $links List of links on plugin in plugin list.
+ * @param array<string> $links List of links on plugin in plugin list.
  *
- * @return array
+ * @return array<string>
  */
 function play_audio_once_add_setting_link( array $links ): array {
+	// add the link to the list.
+	$links[] = '<a href="' . esc_url( \PlayAudioOnce\Dependencies\easySettingsForWordPress\Settings::get_instance()->get_settings_link() ) . '">' . esc_html__( 'Settings', 'play-audio-once' ) . '</a>';
+
 	// get language-dependent URL for the how-to.
 	$url = 'https://github.com/threadi/play-audio-once/blob/master/docs/how_to_use.md';
 	if ( str_starts_with( get_locale(), 'de_' ) ) {
@@ -133,8 +137,8 @@ add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), 'play_audio_on
 /**
  * Add css class on body to prevent audio play multiple times in complete website.
  *
- * @param array $css_classes List of body classes.
- * @return array
+ * @param array<string> $css_classes List of body classes.
+ * @return array<string>
  */
 function play_audio_once_add_body_classes( array $css_classes ): array {
 	// bail if setting is not enabled.
