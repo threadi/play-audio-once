@@ -1,5 +1,15 @@
 # Changelog
 
+## [3.0.1] - 08.03.2026
+
+### Changed
+
+- Update dependencies
+
+### Fixed
+
+- Fixed spelling of variables
+
 ## [3.0.0] - 27.04.2024
 
 ### Added
