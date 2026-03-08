@@ -135,7 +135,7 @@ function play_audio_once_add_setting_link( array $links ): array {
 add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), 'play_audio_once_add_setting_link' );
 
 /**
- * Add css class on body to prevent audio play multiple times in complete website.
+ * Add CSS class on body to prevent audio play multiple times in complete website.
  *
  * @param array<string> $css_classes List of body classes.
  * @return array<string>

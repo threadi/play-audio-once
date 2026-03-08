@@ -1,6 +1,6 @@
 {
 	"name": "play-audio-once",
-	"version": "3.0.0",
+	"version": "3.0.1",
 	"description": "Adds an option to the audio block to prevent the file from being played multiple times.",
 	"author": "threadi",
 	"license": "GPL-2.0-or-later",
