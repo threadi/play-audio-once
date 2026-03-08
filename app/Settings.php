@@ -74,7 +74,7 @@ class Settings {
 		 * Configure all sections for this settings object.
 		 */
 		// add general settings section.
-		$general_tab_general_section = $general_tab->add_section( 'settings_section_general' );
+		$general_tab_general_section = $general_tab->add_section( 'settings_section_general', 10 );
 		$general_tab_general_section->set_title( __( 'General Settings', 'play-audio-once' ) );
 		$general_tab_general_section->set_setting( $settings_obj );
 

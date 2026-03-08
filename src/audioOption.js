@@ -1,7 +1,7 @@
-/* Add custom attribute to image block, in Sidebar */
+/* Add custom attribute to supported blocks, in Sidebar */
 const { __ } = wp.i18n;
 
-// Enable custom attributes on Image block
+// Enable custom attributes on supported blocks
 const enableSidebarSelectOnBlocks = [
     'core/audio'
 ];
@@ -51,10 +51,10 @@ const withSidebarSelectProp = createHigherOrderComponent( ( BlockListBlock ) => 
         }
 
         const { attributes } = props;
-        const { imageAttribute } = attributes;
+        const { audioAttribute } = attributes;
 
-        if ( imageAttribute ) {
-            return <BlockListBlock { ...props } className={ 'has-option-' + imageAttribute } />
+        if ( audioAttribute ) {
+            return <BlockListBlock { ...props } className={ 'has-option-' + audioAttribute } />
         } else {
             return <BlockListBlock { ...props } />
         }
@@ -98,6 +98,7 @@ const addOptionInSidebar = createHigherOrderComponent( ( BlockEdit ) => {
                                     playOnce: value,
                                 } );
                             } }
+                            __nextHasNoMarginBottom
                         />
                     </PanelBody>
                 </InspectorControls>
