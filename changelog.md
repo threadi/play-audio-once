@@ -4,6 +4,7 @@
 
 ### Changed
 
+- Set compatibility with WordPress 7.0
 - Update dependencies
 
 ### Fixed

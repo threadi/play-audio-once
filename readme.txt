@@ -2,7 +2,7 @@
 Contributors: threadi
 Tags: audio, play audio once
 Requires at least: 5.8
-Tested up to: 6.8
+Tested up to: 7.0
 Requires PHP: 8.0
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -39,10 +39,8 @@ The source-code of this plugin is hosted on [GitHub](https://github.com/threadi/
 == Changelog ==
 
 = @@VersionNumber@@ =
-- Added setting for enable play audio once on frontend for all audio files
-- Added setting link in plugin list
-- Added hook documentation
-- Optimized class loader
-- Optimized some code spellings
+- Set compatibility with WordPress 7.0
+- Update dependencies
+- Fixed spelling of variables
 
 [older changes](https://github.com/threadi/play-audio-once/blob/master/changelog.md)
