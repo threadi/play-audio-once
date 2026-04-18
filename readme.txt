@@ -39,8 +39,7 @@ The source-code of this plugin is hosted on [GitHub](https://github.com/threadi/
 == Changelog ==
 
 = @@VersionNumber@@ =
-- Set compatibility with WordPress 7.0
-- Update dependencies
-- Fixed spelling of variables
+- Updated the settings lib
+- Typos
 
 [older changes](https://github.com/threadi/play-audio-once/blob/master/changelog.md)

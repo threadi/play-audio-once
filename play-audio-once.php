@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name:       Play Audio once
+ * Plugin Name:       Play Audio Once
  * Description:       Adds an option to the audio block to prevent the file from being played multiple times.
  * Requires at least: 5.8
  * Requires PHP:      8.0

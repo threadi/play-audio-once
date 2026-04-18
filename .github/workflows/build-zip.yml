@@ -25,6 +25,8 @@ jobs:
           npm run build
           cd ../../../
 
+      - uses: anchore/sbom-action@v0
+
       - name: Run PHPStan check
         run: vendor/bin/phpstan analyse
 
@@ -58,6 +60,10 @@ jobs:
           rm -fr build
           rm -fr languages
           rm -fr src
+          rm -fr svn
+          rm -fr releases
+          rm -fr .github
+          rm .gitignore
           rm changelog.md
           rm package.json
           rm package-lock.json
@@ -72,7 +78,7 @@ jobs:
           error-severity: 7
           warning-severity: 6
           include-low-severity-errors: true
-          slug: propstack-connector
+          slug: play-audio-once
         continue-on-error: true
 
       - name: ZIP plugin
