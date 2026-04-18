@@ -1,5 +1,11 @@
 # Changelog
 
+## [3.0.2] - 18.04.2026
+
+### Changed
+
+- Updated the settings lib
+
 ## [3.0.1] - 08.03.2026
 
 ### Changed

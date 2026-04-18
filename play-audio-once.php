@@ -110,31 +110,6 @@ function play_audio_once_add_row_meta_links( array $links, string $file ): array
 add_filter( 'plugin_row_meta', 'play_audio_once_add_row_meta_links', 10, 2 );
 
 /**
- * Add links in plugin list.
- *
- * @param array<string> $links List of links on plugin in plugin list.
- *
- * @return array<string>
- */
-function play_audio_once_add_setting_link( array $links ): array {
-	// add the link to the list.
-	$links[] = '<a href="' . esc_url( \PlayAudioOnce\Dependencies\easySettingsForWordPress\Settings::get_instance()->get_settings_link() ) . '">' . esc_html__( 'Settings', 'play-audio-once' ) . '</a>';
-
-	// get language-dependent URL for the how-to.
-	$url = 'https://github.com/threadi/play-audio-once/blob/master/docs/how_to_use.md';
-	if ( str_starts_with( get_locale(), 'de_' ) ) {
-		$url = 'https://github.com/threadi/play-audio-once/blob/master/docs/how_to_use_de.md';
-	}
-
-	// add the link to the list.
-	$links[] = '<a href="' . esc_url( $url ) . '" target="_blank">' . esc_html__( 'How to use', 'play-audio-once' ) . '</a>';
-
-	// return resulting list of links.
-	return $links;
-}
-add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), 'play_audio_once_add_setting_link' );
-
-/**
  * Add CSS class on body to prevent audio play multiple times in complete website.
  *
  * @param array<string> $css_classes List of body classes.

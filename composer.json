@@ -1,18 +1,6 @@
 {
     "name": "threadi/play-audio-once",
-    "version": "3.0.1",
-    "scripts": {
-        "post-install-cmd": [
-            "\"vendor/bin/phpcs\" --config-set installed_paths vendor/wp-coding-standards/wpcs,vendor/phpcsstandards/phpcsutils,vendor/phpcsstandards/phpcsextra,vendor/sirbrillig/phpcs-variable-analysis,vendor/automattic/vipwpcs",
-            "\"vendor/bin/mozart\" compose",
-            "composer dump-autoload"
-        ],
-        "post-update-cmd": [
-            "\"vendor/bin/phpcs\" --config-set installed_paths vendor/wp-coding-standards/wpcs,vendor/phpcsstandards/phpcsutils,vendor/phpcsstandards/phpcsextra,vendor/sirbrillig/phpcs-variable-analysis,vendor/automattic/vipwpcs",
-            "\"vendor/bin/mozart\" compose",
-            "composer dump-autoload"
-        ]
-    },
+    "version": "3.0.2",
     "config": {
         "allow-plugins": {
             "dealerdirect/phpcodesniffer-composer-installer": true,
@@ -24,17 +12,6 @@
         "prepend-autoloader": false,
         "platform-check": false
     },
-    "extra": {
-        "mozart": {
-            "dep_namespace": "PlayAudioOnce\\Dependencies\\",
-            "dep_directory": "/app/Dependencies/",
-            "classmap_directory": "/libs/classes/dependencies/",
-            "classmap_prefix": "PlayAudioOnce",
-            "packages": [
-                "threadi/easy-settings-for-wordpress"
-            ]
-        }
-    },
     "autoload": {
         "psr-4": {
             "PlayAudioOnce\\": "app/"
@@ -42,7 +19,7 @@
     },
     "require": {
         "php": "^8.0",
-        "threadi/easy-settings-for-wordpress": "^1.1.0"
+        "threadi/easy-settings-for-wordpress": "^2.1.2"
     },
     "require-dev": {
         "wp-coding-standards/wpcs": "^3.1.0",
