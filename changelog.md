@@ -5,6 +5,7 @@
 ### Changed
 
 - Updated the settings lib
+- Typos
 
 ## [3.0.1] - 08.03.2026
 
