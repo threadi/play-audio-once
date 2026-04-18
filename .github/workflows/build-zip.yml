@@ -4,6 +4,7 @@ on:
   push:
     tags:
       - '*'
+  workflow_dispatch:
 
 jobs:
   build:
@@ -51,7 +52,7 @@ jobs:
           search-text: '@@VersionNumber@@'
           replacement-text: ${{ github.ref_name }}
 
-      - name: ZIP plugin
+      - name: Cleanup
         run: |
           rm -fr assets
           rm -fr build
@@ -61,6 +62,21 @@ jobs:
           rm package.json
           rm package-lock.json
           rm ruleset.xml
+
+      - name: Run PCP check
+        uses: wordpress/plugin-check-action@v1
+        with:
+          ignore-codes:
+            WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedConstantFound
+          include-experimental: false
+          error-severity: 7
+          warning-severity: 6
+          include-low-severity-errors: true
+          slug: propstack-connector
+        continue-on-error: true
+
+      - name: ZIP plugin
+        run: |
           cd ..
           zip -r -q ${{ github.event.repository.name }}_${{ github.ref_name }}.zip ${{ github.event.repository.name }}/* -x "*/.git/*" "*/.github/*" "*/phpcs.xml" "*/composer.json" "*/composer.lock" "*/readme.md" "*/.gitignore" "*/vendor/*" "*/node_modules/*" "*/svn/*" "*/releases/*"
           zip -ur ${{ github.event.repository.name }}_${{ github.ref_name }}.zip ${{ github.event.repository.name }}/vendor/autoload.php
