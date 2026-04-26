@@ -15,14 +15,14 @@ Adds the option to prevent an audio file from being played multiple times.
 Adds the option to prevent an audio file from being played multiple times. You can set the option for the complete website
 or restrict the audio files only for specific files added from you in your editor.
 
-In the frontend, the option, if activated, is executed on the audio file if the visitor's browser has JavaScript activated. The fact that an audio file was played is saved in the browser session - not as a cookie. The storage takes place at the moment of playback, which means that it is no longer possible to rewind or fast-forward. The user is not offered an option to reset.
+In the frontend, the option, if activated, is executed on the audio file if the visitor's browser has JavaScript activated. That an audio file was played is saved in the browser session - not as a cookie. The storage takes place at the moment of playback, which means that it is no longer possible to rewind or fast-forward. The user is not offered an option to reset.
 
 == Supported editors ==
 
 The plugin actually supports following editors:
 
 * Block Editor
-* Multiple plugins which adds audio widget in Elementor
+* Multiple plugins, which adds audio widget in Elementor
 
 == Installation ==
 
@@ -39,7 +39,6 @@ The source-code of this plugin is hosted on [GitHub](https://github.com/threadi/
 == Changelog ==
 
 = @@VersionNumber@@ =
-- Updated the settings lib
-- Typos
+- Updated dependencies
 
 [older changes](https://github.com/threadi/play-audio-once/blob/master/changelog.md)
