@@ -19,7 +19,7 @@
     },
     "require": {
         "php": "^8.0",
-        "threadi/easy-settings-for-wordpress": "^2.1.2"
+        "threadi/easy-settings-for-wordpress": "^2.1.5"
     },
     "require-dev": {
         "wp-coding-standards/wpcs": "^3.1.0",
