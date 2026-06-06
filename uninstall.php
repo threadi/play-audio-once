@@ -6,6 +6,8 @@
  */
 
 // Exit if accessed directly.
+use PlayAudioOnce\Settings;
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
@@ -20,4 +22,8 @@ if ( PHP_VERSION_ID < 80000 ) { // @phpstan-ignore smaller.alwaysFalse
 	return;
 }
 
-// nothing to do.
+// initialize the settings.
+Settings::get_instance()->add_settings();
+
+// and remove them.
+Settings::get_instance()->get_settings_obj()->delete_settings();

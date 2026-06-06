@@ -62,7 +62,7 @@ class Responsive_Addons_For_Elementor extends ThirdPartySupport_Base {
 		}
 
 		// bail if setting is not enabled.
-		if ( ! empty( $instance->get_settings( 'play_audio_once' ) ) ) {
+		if ( empty( $instance->get_settings( 'play_audio_once' ) ) ) {
 			return $content;
 		}
 

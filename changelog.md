@@ -1,5 +1,12 @@
 # Changelog
 
+## [Unreleased]
+
+### Fixed
+
+- Fixed support for "Responsive Addons for Elementor" which was not loaded
+- Fixed missing removing of our settings on uninstallation
+
 ## [3.0.3] - 26.04.2026
 
 ### Changed
