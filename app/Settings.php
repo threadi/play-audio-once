@@ -69,6 +69,9 @@ class Settings {
 		$settings_obj->set_title( __( 'Settings for Play Audio Once', 'play-audio-once' ) );
 		$settings_obj->set_menu_slug( 'play-audio-once' );
 		$settings_obj->show_settings_link_in_plugin_list( true );
+		if ( method_exists( $settings_obj, 'set_view' ) ) { // @phpstan-ignore function.alreadyNarrowedType
+			$settings_obj->set_view( 'dataview' );
+		}
 
 		// get the settings page.
 		$settings_page = $settings_obj->get_page( 'play-audio-once' );
@@ -92,7 +95,7 @@ class Settings {
 		 */
 		// add general settings section.
 		$general_tab_general_section = $general_tab->add_section( 'settings_section_general', 10 );
-		$general_tab_general_section->set_title( __( 'General Settings', 'play-audio-once' ) );
+		$general_tab_general_section->set_title( __( 'Settings', 'play-audio-once' ) );
 		$general_tab_general_section->set_setting( $settings_obj );
 
 		// add setting for enable play audio once in the frontend.
