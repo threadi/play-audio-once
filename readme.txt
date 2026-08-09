@@ -2,8 +2,8 @@
 Contributors: threadi
 Tags: audio, play audio once
 Requires at least: 5.8
-Tested up to: 7.0
-Requires PHP: 8.0
+Tested up to: 7.1
+Requires PHP: 8.2
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Stable tag: @@VersionNumber@@
@@ -39,6 +39,12 @@ The source-code of this plugin is hosted on [GitHub](https://github.com/threadi/
 == Changelog ==
 
 = @@VersionNumber@@ =
+- Now requires PHP 8.2 or newer
+- Set compatibility with WordPress 7.1
+- Updated settings lib to 3.0.0
+- Enabled DataView for settings, if WordPress 7.0 or newer is used
 - Updated dependencies
+- Fixed support for "Responsive Addons for Elementor" which was not loaded
+- Fixed missing removing of our settings on uninstallation
 
 [older changes](https://github.com/threadi/play-audio-once/blob/master/changelog.md)

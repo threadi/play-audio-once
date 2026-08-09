@@ -1,6 +1,14 @@
 # Changelog
 
-## [Unreleased]
+## [3.0.4] - 09.08.2026
+
+### Changed
+
+- Now requires PHP 8.2 or newer
+- Set compatibility with WordPress 7.1
+- Updated settings lib to 3.0.0
+- Enabled DataView for settings, if WordPress 7.0 or newer is used
+- Updated dependencies
 
 ### Fixed
 

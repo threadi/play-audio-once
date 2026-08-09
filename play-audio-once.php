@@ -3,7 +3,7 @@
  * Plugin Name:       Play Audio Once
  * Description:       Adds an option to the audio block to prevent the file from being played multiple times.
  * Requires at least: 5.8
- * Requires PHP:      8.0
+ * Requires PHP:      8.2
  * Version:           @@VersionNumber@@
  * Author:            Thomas Zwirner
  * Author URI:        https://www.thomaszwirner.de
@@ -19,8 +19,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-// do nothing if PHP-version is not 8.0 or newer.
-if ( PHP_VERSION_ID < 80000 ) { // @phpstan-ignore smaller.alwaysFalse
+// do nothing if PHP-version is not 8.2 or newer.
+if ( PHP_VERSION_ID < 80200 ) { // @phpstan-ignore smaller.alwaysFalse
 	return;
 }
 
