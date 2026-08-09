@@ -62,6 +62,8 @@ jobs:
           rm changelog.md
           rm package.json
           rm package-lock.json
+          rm .gitattributes
+          rm .phpcs.xml.dist
 
       - name: Run PCP check
         uses: wordpress/plugin-check-action@v1
